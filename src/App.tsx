@@ -11,12 +11,19 @@ function App() {
     setIdeas([...ideas, newIdea]);
   };
 
+  const deleteIdea = (id: number) => {
+    const updatedIdeas = ideas.filter((idea) => {
+      return idea.id !== id;
+    });
+    setIdeas(updatedIdeas);
+  };
+
   return (
     <main className="flex">
       <SideBar />
       <section className="w-full h-screen overflow-y-auto">
         <Form addIdea={addIdea} />
-        <Ideas ideas={ideas} />
+        <Ideas ideas={ideas} deleteIdea={deleteIdea} />
       </section>
     </main>
   );
