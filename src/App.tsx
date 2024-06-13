@@ -12,9 +12,9 @@ function App() {
   };
 
   return (
-    <main className="flex h-screen">
+    <main className="flex">
       <SideBar />
-      <section className="w-full">
+      <section className="w-full h-screen overflow-y-auto">
         <Form addIdea={addIdea} />
         <Ideas ideas={ideas} />
       </section>
