@@ -27,6 +27,7 @@ const Form = ({ addIdea }: FormProps) => {
         id: Date.now(),
         title: ideaInputs.title,
         body: ideaInputs.body,
+        isFavorite: false,
       };
       addIdea(newIdea);
       setIdeaInputs({ title: "", body: "" });
