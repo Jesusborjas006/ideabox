@@ -10,6 +10,7 @@ const Form = ({ addIdea }: FormProps) => {
     title: "",
     body: "",
   });
+  const formCondition = ideaInputs.title && ideaInputs.body;
 
   const handleChange = (
     e:
@@ -64,8 +65,13 @@ const Form = ({ addIdea }: FormProps) => {
         </div>
 
         <button
-          className="bg-[#1f1f3C] text-white font-semibold py-2"
+          className={`bg-[#1f1f3C] text-white font-semibold py-2 ${
+            !formCondition
+              ? "cursor-not-allowed opacity-50"
+              : "cursor-auto opacity-100"
+          }`}
           onClick={submitIdea}
+          disabled={!formCondition}
         >
           Save
         </button>
