@@ -18,7 +18,7 @@ const Form = () => {
             Body:
           </label>
           <textarea
-            className="border-2 border-black ml-2 w-full resize-none"
+            className="border-2 border-black ml-1 w-full resize-none"
             id="body"
             rows={2}
           ></textarea>
