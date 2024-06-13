@@ -11,8 +11,6 @@ const Form = ({ addIdea }: FormProps) => {
     body: "",
   });
 
-  console.log(ideaInputs);
-
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLTextAreaElement>
@@ -24,13 +22,13 @@ const Form = ({ addIdea }: FormProps) => {
   const submitIdea = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (ideaInputs.title || ideaInputs.body) {
-      console.log("Clicked");
       const newIdea = {
         id: Date.now(),
         title: ideaInputs.title,
         body: ideaInputs.body,
       };
       addIdea(newIdea);
+      setIdeaInputs({ title: "", body: "" });
     }
   };
 
@@ -47,6 +45,7 @@ const Form = ({ addIdea }: FormProps) => {
             type="text"
             name="title"
             onChange={handleChange}
+            value={ideaInputs.title}
           />
         </div>
 
@@ -60,6 +59,7 @@ const Form = ({ addIdea }: FormProps) => {
             rows={2}
             name="body"
             onChange={handleChange}
+            value={ideaInputs.body}
           ></textarea>
         </div>
 

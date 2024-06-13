@@ -6,7 +6,6 @@ import { IdeaType } from "./types";
 
 function App() {
   const [ideas, setIdeas] = useState<[] | IdeaType[]>([]);
-  console.log(ideas);
 
   const addIdea = (newIdea: IdeaType) => {
     setIdeas([...ideas, newIdea]);
