@@ -5,10 +5,10 @@ import activeStar from "../../public/assets/star-active.svg";
 interface IdeasProps {
   ideas: [] | IdeaType[];
   deleteIdea: (id: number) => void;
-  addToFavorites: (id: number) => void;
+  toggleFavorite: (id: number) => void;
 }
 
-const Ideas = ({ ideas, deleteIdea, addToFavorites }: IdeasProps) => {
+const Ideas = ({ ideas, deleteIdea, toggleFavorite }: IdeasProps) => {
   const ideaElements = ideas.map((idea) => (
     <div
       key={idea.id}
@@ -16,9 +16,9 @@ const Ideas = ({ ideas, deleteIdea, addToFavorites }: IdeasProps) => {
     >
       <div className="bg-[#1f1f3C] text-white flex justify-between px-3 py-1 h-[40px]">
         <img
-          src={star}
+          src={idea.isFavorite ? activeStar : star}
           alt="Star Symbol"
-          onClick={() => addToFavorites(idea.id)}
+          onClick={() => toggleFavorite(idea.id)}
         />
         <button
           className="text-2xl hover:text-red-500"
