@@ -6,8 +6,7 @@ import { IdeaType } from "./types";
 
 function App() {
   const [ideas, setIdeas] = useState<[] | IdeaType[]>([]);
-
-  console.log("All Idea: ", ideas);
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const addIdea = (newIdea: IdeaType) => {
     setIdeas([...ideas, newIdea]);
@@ -32,20 +31,23 @@ function App() {
     );
   };
 
-  if (ideas.map((idea) => idea))
-    return (
-      <main className="flex">
-        <SideBar />
-        <section className="w-full h-screen overflow-y-auto">
-          <Form addIdea={addIdea} />
-          <Ideas
-            ideas={ideas}
-            deleteIdea={deleteIdea}
-            toggleFavorite={toggleFavorite}
-          />
-        </section>
-      </main>
-    );
+  return (
+    <main className="flex">
+      <SideBar
+        showFavorites={showFavorites}
+        setShowFavorites={setShowFavorites}
+      />
+      <section className="w-full h-screen overflow-y-auto">
+        <Form addIdea={addIdea} />
+        <Ideas
+          ideas={ideas}
+          deleteIdea={deleteIdea}
+          toggleFavorite={toggleFavorite}
+          showFavorites={showFavorites}
+        />
+      </section>
+    </main>
+  );
 }
 
 export default App;
