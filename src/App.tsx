@@ -7,6 +7,7 @@ import { IdeaType } from "./types";
 function App() {
   const [ideas, setIdeas] = useState<[] | IdeaType[]>([]);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [query, setQuery] = useState("");
 
   const addIdea = (newIdea: IdeaType) => {
     setIdeas([...ideas, newIdea]);
@@ -36,6 +37,8 @@ function App() {
       <SideBar
         showFavorites={showFavorites}
         setShowFavorites={setShowFavorites}
+        query={query}
+        setQuery={setQuery}
       />
       <section className="w-full h-screen overflow-y-auto">
         <Form addIdea={addIdea} />
@@ -44,6 +47,7 @@ function App() {
           deleteIdea={deleteIdea}
           toggleFavorite={toggleFavorite}
           showFavorites={showFavorites}
+          query={query}
         />
       </section>
     </main>

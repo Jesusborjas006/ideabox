@@ -6,6 +6,7 @@ interface IdeasProps {
   deleteIdea: (id: number) => void;
   toggleFavorite: (id: number) => void;
   showFavorites: boolean;
+  query: string;
 }
 
 const Ideas = ({
@@ -13,8 +14,15 @@ const Ideas = ({
   deleteIdea,
   toggleFavorite,
   showFavorites,
+  query,
 }: IdeasProps) => {
-  const ideaElements = ideas.map((idea) => (
+  const searchedIdeas = ideas.filter(
+    (idea) =>
+      idea.title.toLowerCase().includes(query.toLowerCase()) ||
+      idea.body.toLowerCase().includes(query.toLowerCase())
+  );
+
+  const ideaElements = searchedIdeas.map((idea) => (
     <Idea
       key={idea.id}
       id={idea.id}
@@ -26,7 +34,7 @@ const Ideas = ({
     />
   ));
 
-  const favoriteIdeas = ideas
+  const favoriteIdeas = searchedIdeas
     .filter((idea) => {
       return idea.isFavorite;
     })
