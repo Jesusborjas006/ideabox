@@ -13,16 +13,16 @@ const MobileNav = ({
 }: MobileNavProps) => {
   return (
     <nav className="bg-[#1f1f3C] text-white text-center md:hidden">
-      <div className="relative py-10">
+      <div className="py-10 flex flex-col gitems-center">
         <h1 className="text-3xl font-bold tracking-wider">IdeaBox</h1>
         <button
-          className="bg-[#eaeaf4] text-[#1f1f3C] font-bold mt-6 py-1 absolute w-[180px] mx-auto"
+          className="bg-[#eaeaf4] text-[#1f1f3C] font-bold mt-6 py-1 w-[180px] mx-auto"
           onClick={() => setShowFavorites((prev) => !prev)}
         >
           {showFavorites ? "Show All Ideas" : "Show Starred Ideas"}
         </button>
         <input
-          className="border-2 mt-24 w-fit indent-2 text-black py-1"
+          className="border-2 mt-4 w-fit indent-2 text-black py-1"
           type="text"
           placeholder="Search Idea..."
           value={query}
