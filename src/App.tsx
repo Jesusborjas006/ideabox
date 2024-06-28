@@ -3,6 +3,7 @@ import Form from "./components/Form";
 import Ideas from "./components/Ideas";
 import SideBar from "./components/SideBar";
 import { IdeaType } from "./types";
+import MobileNav from "./components/MobileNav";
 
 function App() {
   const [ideas, setIdeas] = useState<[] | IdeaType[]>([]);
@@ -33,14 +34,20 @@ function App() {
   };
 
   return (
-    <main className="flexG">
+    <main className="flex ">
       <SideBar
         showFavorites={showFavorites}
         setShowFavorites={setShowFavorites}
         query={query}
         setQuery={setQuery}
       />
-      <section className="w-full h-screen overflow-y-auto">
+      <section className="w-full h-screen overflow-y-auto ">
+        <MobileNav
+          showFavorites={showFavorites}
+          setShowFavorites={setShowFavorites}
+          query={query}
+          setQuery={setQuery}
+        />
         <Form addIdea={addIdea} />
         <Ideas
           ideas={ideas}
