@@ -36,7 +36,7 @@ const Form = ({ addIdea }: FormProps) => {
 
   return (
     <form className="bg-[#A8AAD2] flex items-center py-16">
-      <div className="w-[50%] mx-auto flex flex-col gap-y-6">
+      <div className="min-w-[300px] w-[50%] mx-auto flex flex-col gap-y-6">
         <div className="flex">
           <label className="text-lg" htmlFor="title">
             Title:
