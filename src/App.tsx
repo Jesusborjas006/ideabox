@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <main className="flex">
+    <main className="flexG">
       <SideBar
         showFavorites={showFavorites}
         setShowFavorites={setShowFavorites}
