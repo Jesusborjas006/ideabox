@@ -14,9 +14,9 @@ const MobileNav = ({
   return (
     <nav className="bg-[#1f1f3C] text-white text-center md:hidden">
       <div className="relative py-10">
-        <h1 className="text-3xl font-bold  tracking-wider">IdeaBox</h1>
+        <h1 className="text-3xl font-bold tracking-wider">IdeaBox</h1>
         <button
-          className="bg-[#eaeaf4] text-[#1f1f3C] font-bold mt-6 p-2 absolute w-[180px]"
+          className="bg-[#eaeaf4] text-[#1f1f3C] font-bold mt-6 py-1 absolute w-[180px] mx-auto"
           onClick={() => setShowFavorites((prev) => !prev)}
         >
           {showFavorites ? "Show All Ideas" : "Show Starred Ideas"}
