@@ -13,7 +13,7 @@ const MobileNav = ({
 }: MobileNavProps) => {
   return (
     <nav className="bg-[#1f1f3C] text-white text-center md:hidden">
-      <div className="py-10 flex flex-col gitems-center">
+      <div className="py-10 flex flex-col items-center">
         <h1 className="text-3xl font-bold tracking-wider">IdeaBox</h1>
         <button
           className="bg-[#eaeaf4] text-[#1f1f3C] font-bold mt-6 py-1 w-[180px] mx-auto"
